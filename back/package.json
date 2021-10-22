@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "concurrently": "^6.2.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sqlite3": "^4.2.0"
+  },
+  "scripts": {
+    "front": "cd ../front && npm start",
+    "back": "open http://localhost:3000 && nodemon index.js",
+    "start": "concurrently --kill-others \"npm run front\" \"npm run back\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}
