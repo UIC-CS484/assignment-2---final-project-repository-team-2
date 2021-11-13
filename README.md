@@ -1,8 +1,10 @@
 # Current Assignment Notes
+<h1>Note: This time we did not do the commits separately, instead we did all the commits from one machine due to our personal reasons.</h1>
+</hr>
 <h2> ⭐️ &nbsp; All requirements were met except for (ER Diagram of Database) which we couldn't do due to the project complexity that we chose</h2>
 <h4>In order to test it out:</h4>
 <ol>
- <li>Install all dependancies in all 3 folders [front, back, storage] </li>
+ <li>Install all dependencies in all 3 folders [front, back, storage] </li>
  <li>Cd into "back" folder and run 'npm run dev'</li>
  <li>Finally, start up our created api inside storage folder by running 'npm start'</li>
 </ol>
