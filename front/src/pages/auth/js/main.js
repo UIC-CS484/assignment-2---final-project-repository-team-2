@@ -1,5 +1,6 @@
-// Test import of styles
-import '@/styles/index.scss';
+
+// boostrap js
+import 'bootstrap'
 
 
 import {

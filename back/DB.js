@@ -1,98 +1,151 @@
-const crypto = require("crypto");
+// DB
+const sqlite3 = require('sqlite3').verbose();
 
-const db = {
-    users: {
-    },
+const { hashPass } = require('./models/Pass');
+
+const dbErrHandler = (err) => err ? console.error(err.message) : null;
+const db = new sqlite3.Database(':memory:', dbErrHandler);
+
+const DBConfig = {
     sessions: {
+        createTableQ: `CREATE TABLE sessions (
+            id TEXT PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            expires_at TEXT NOT NULL
+        );`,
+        queries: {
+            insert: (id, user_id, expires_at = "NULL") => `INSERT INTO sessions(id, user_id, expires_at) VALUES('${id}', '${user_id}', '${expires_at}');`,
+            getById: (id) => `SELECT * FROM sessions WHERE id = '${id}';`,
+            deleteById: (id) => `DELETE FROM sessions WHERE id = '${id}';`,
+        }
+    },
+    users: {
+        createTableQ: `CREATE TABLE users (
+            id INTEGER PRIMARY KEY,
+            username TEXT NOT NULL,
+            password TEXT NOT NULL
+        );`,
+        queries: {
+            insert: (username, password) => `INSERT INTO users(username, password) VALUES('${username}', '${password}');`,
+            getById: (id) => `SELECT * FROM users WHERE id = ${id};`,
+            deleteById: (id) => `DELETE FROM users WHERE id = ${id};`,
+            updateById: (id, data) => `UPDATE users SET ${Object.keys(data).map(key => `${key} = '${data[key]}'`).join(", ")} WHERE id = ${id};`,
+            getByUsername: (username) => `SELECT * FROM users WHERE username = '${username}';`,
+        }
+    },
+    heroes: {
+        createTableQ: `CREATE TABLE heroes (
+            id INTEGER PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            hero_id INTEGER NOT NULL,
+            is_available INTEGER NOT NULL
+        );`,
+        queries: {
+            insert: (user_id, hero_id) => `INSERT INTO heroes(user_id, hero_id, is_available) VALUES('${user_id}', '${hero_id}', '1');`,
+            getByUserId: (user_id) => `SELECT * FROM heroes WHERE user_id = ${user_id};`,
+            deleteById: (id) => `DELETE FROM heroes WHERE id = ${id};`,
+            updateAvailabilityById: (id, user_id, is_available) => `UPDATE heroes SET is_available='${is_available}' WHERE id = ${id} AND user_id = ${user_id};`,
+        }
+    },
+    items: {
+        createTableQ: `CREATE TABLE items (
+            id INTEGER PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            item_id INTEGER NOT NULL
+        );`,
+        queries: {
+            insert: (user_id, item_id) => `INSERT INTO items(user_id, item_id) VALUES('${user_id}', '${item_id}');`,
+            getByUserId: (user_id) => `SELECT * FROM items WHERE user_id = ${user_id};`,
+            deleteById: (id) => `DELETE FROM items WHERE id = ${id};`,
+        }
     }
 }
 
-// User Model
-function updateUsername(oldUsername, newUsername) {
-    db.users[newUsername] = {...db.users[oldUsername]};
-    delete db.users[oldUsername];
+function getQ (q)  {
+    return new Promise((res) => {
+        db.serialize(() => {
+            db.get(q, (err, data) => {
+                if(err) res({success:false , err});
+                res({success: true, data});
+            });
+        });
+    });
 }
 
-function removeUser(username) {
-    delete db.users[username];
+function runQ (q)  {
+    return new Promise((res) => {
+        db.serialize(() => {
+            db.run(q, (err) => {
+                if(err) res({success:false , err});
+            });
+
+            res({success: true});
+        });
+    });
 }
 
-function getUser(username) {
-    return db.users.hasOwnProperty(username) ? { username: username, password: db.users[username].password } : null;
+function allQ (q)  {
+    return new Promise((res) => {
+        db.serialize(() => {
+            db.all(q, (err, data) => {
+                if(err) res({success:false , err});
+
+                res({success: true, data});
+            });
+        });
+    });
 }
 
-function userExists(username) {
-    return getUser(username) !== null;
-}
-
-function createUser(username, pass) {
-    db.users[username] = {
-        password: hashPass(pass)
-    };
-
-    return {
-        username,
-        password: db.users[username].password
-    };
-}
-
-// Auth Model
-function checkPass(username, pass) {
-    if( hashPass(pass) === getUser(username).password ) 
-        return true;
-
-    return false;
-}
-
-function hashPass(pass) {
-    return crypto.createHash("sha256").update(pass).digest('hex');
-}
-
-// Sessions Model
-function sessionExists(sessionID) {
-    return db.sessions.hasOwnProperty(sessionID);
-}
-
-function getSessionUsername(sessionID) {
-    return sessionExists(sessionID) === true ? db.sessions[sessionID].username : null;
-}
-
-function createSession(username) {
-    // TODO: HIDE SALT
-    const salt = "PeakyBlinders";
-    const saltedUsername = `${salt}${username}`;
-    const sessionID = crypto.createHash("sha256").update(saltedUsername).digest('hex');
-
-    db.sessions[sessionID] = {
-        username,
-        expires: "to implement" 
-    };
-
-    return sessionID;
-}
-
-function removeSession(sessionID) {
-    delete db.sessions[sessionID];
+function showAllRows (table_name)  {
+    allQ(`SELECT * FROM ${table_name}`).then(res => {
+        console.log(res.data);
+    });
 }
 
 
+// SETUP DB:
+// boot the db & seed
+db.serialize(function() {
+    // create tables
+    for (let [key, _] of Object.entries(DBConfig)) 
+        db.run(DBConfig[key].createTableQ);
+    
+    // seed the db with users
+    for(let i = 0; i < 3; i++) {
+        const query = DBConfig.users.queries.insert(`test${i}`, hashPass(`test${i}`));
+        // db.run(query);
+        runQ(query).then((res) => {
+            if(!res.success) console.error(res.err);
+        });
+    }
+    // seed each user with their hero
+    for(let i = 0; i < 3; i++) {
+        const query = DBConfig.heroes.queries.insert(i, 0);
+        // db.run(query);
+        runQ(query).then((res) => {
+            if(!res.success) console.error(res.err);
+        });
+    }
 
-const dbInterface = {
-    getUser,
-    userExists,
-    createUser,
-    updateUsername,
-    removeUser,
+    // seed each user with their first items
+    for(let i = 0; i < 3; i++) {
+        const query = DBConfig.items.queries.insert(i, 0);
+        // db.run(query);
+        runQ(query).then((res) => {
+            if(!res.success) console.error(res.err);
+        });
+    }
 
-    checkPass,
-    hashPass,
+    // showAllRows("heroes");
+});
 
-    sessionExists,
-    getSessionUsername,
-    createSession,
-    removeSession,
 
-    db
-}
+// db.close(dbErrHandler);
 
-module.exports = dbInterface
+module.exports = {
+    DBConfig,
+    getQ,
+    runQ,
+    allQ,
+    showAllRows
+};

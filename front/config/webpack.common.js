@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require("webpack")
 // const PrettierPlugin = require('prettier-webpack-plugin')
 
 const paths = require('./paths')
@@ -45,6 +46,10 @@ module.exports = {
           noErrorOnMissing: true,
         },
       ],
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
 
     // Generates an HTML file from a template

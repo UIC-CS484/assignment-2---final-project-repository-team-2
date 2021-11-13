@@ -1,11 +1,9 @@
-const { 
-    getSessionUsername,
-    sessionExists, 
-    getUser, 
- } = require("./DB");
+const { sessionExists, getSessionUsername } = require("./models/Sessions");
+const { getUser } = require("./models/Users");
+
 
 // check session
-function SessionMiddleware(req, res, next) {
+async function SessionMiddleware(req, res, next) {
     const sessionID = req.cookies.sessionID;
 
     if(!sessionID) {
@@ -13,9 +11,14 @@ function SessionMiddleware(req, res, next) {
     } 
     else {
         // if such sessionid DO EXISTS
-        if(sessionExists(sessionID)) {
+        const doesSessionExist = await sessionExists(sessionID);
+
+        if(doesSessionExist) {
             // append user data to req
-            req.sessionData = getUser(getSessionUsername(sessionID));
+            const sessionUsername = await getSessionUsername(sessionID);
+
+            req.sessionData = await getUser(sessionUsername);
+
             next();
         } // if no such sessionid 
         else {

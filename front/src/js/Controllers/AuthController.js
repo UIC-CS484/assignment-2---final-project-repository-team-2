@@ -32,7 +32,6 @@ function login() {
     .then((res) => {
         if(res.redirected === true) 
             document.location.href = res.url;
-        else console.log(res);
     })
     .catch(err => console.error(err));
 
@@ -66,9 +65,8 @@ function register() {
         }) // body data type must match "Content-Type" header
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(data => console.log(data))
     .catch(err => err.json())
-    .catch(err => console.error(err));
 }
 
 return {

@@ -7,9 +7,14 @@ import StateController from "./Controllers/StateController";
 import { NotificationController } from "./Controllers/NotificationCtr/NotificationController";
 
 
+// Helpers
+import { Loader } from "./Helpers/Loader";
+import { Modal } from "./Helpers/Modal";
 
 export { 
     StateController, 
     AuthController, 
-    NotificationController
+    NotificationController,
+    Loader,
+    Modal
 };

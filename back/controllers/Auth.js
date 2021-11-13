@@ -1,16 +1,10 @@
 const path = require('path');
 
-const { 
-    createUser, 
-    getUser, 
-    getSessionUsername, 
-    sessionExists, 
-    createSession, 
-    userExists ,
-    removeSession
-} = require("../DB");
 
 const { _jsonError } = require("../misc");
+const { giveUserHero, fetchRandomHero } = require('../models/Heroes');
+const { sessionExists, getSessionUsername, createSession, removeSession } = require('../models/Sessions');
+const { userExists, createUser, getUser } = require('../models/Users');
 
 const Auth = {
     index,
@@ -20,12 +14,12 @@ const Auth = {
 }
 
 
-function index(req, res) {
+async function index(req, res) {
     const sessionID = req.cookies.sessionID; 
     
     // check if session is already in place
-    if(sessionExists(sessionID)) {
-        req.sessionData = getUser(getSessionUsername(sessionID));
+    if(await sessionExists(sessionID)) {
+        req.sessionData = await getUser(getSessionUsername(sessionID));
         res.redirect("/");
     } 
     // if no session is present 
@@ -34,16 +28,16 @@ function index(req, res) {
     }
 };
 
-function login(req, res) {
+async function login(req, res) {
     // set new session id associated with username
-    const sessionID = createSession(req.body.username);
+    const sessionID = await createSession(req.body.username);
     // set cookie
     res.cookie("sessionID", sessionID, { maxAge: 300000 }); // 5 mins
     // send response
     res.redirect("/");
 };
 
-function register(req, res) {
+async function register(req, res) {
     let userData;
     // check for needed fields
     if (req.body?.password === undefined || req.body?.username === undefined) {
@@ -53,23 +47,31 @@ function register(req, res) {
 
     const { username, password } = req.body;
 
-    if(userExists(username)) {
+    if(await userExists(username)) {
         res.status(404).json(_jsonError("User alredy exists!"));
         return;
     }
 
-    userData = createUser(username, password);
+    userData = await createUser(username, password);
+    
+    // give random hero to user
+    const { id } = await getUser(username);
+    // get random heroid
+    const randHero = await fetchRandomHero();
+    const result = await giveUserHero(id, randHero.id);
 
-    res.json(userData);
+
+    res.json({...userData, id});
 }
 
-function logout(req, res) {
+async function logout(req, res) {
     // get session id 
     const sessionID = req.cookies.sessionID; 
     // remove from db
-    removeSession(sessionID);
-    // redirect to auth
-    res.redirect("/auth");
+    if(await removeSession(sessionID)) {
+        // redirect to auth
+        res.redirect("/auth");
+    };
 }
 
 module.exports = Auth;

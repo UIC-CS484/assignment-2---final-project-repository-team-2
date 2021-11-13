@@ -6,23 +6,23 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+
+
 // Middlewares
 const { 
     SessionMiddleware
 } = require('./middlewares');
 
+
+
 // Controllers
 const {
     Auth,
-    Profile
+    Profile,
+    Game
 } = require("./controllers/export");
 
-// DB
-const { 
-    userExists, 
-    checkPass,
-    getUser,
-} = require('./DB');
+
 
 
 // create express instance
@@ -38,18 +38,24 @@ app.use(express.json())
 // passport
 app.use(passport.initialize());
 
+
+const { userExists, getUser } = require("./models/Users");
+const { checkPass } = require("./models/Pass");
+
 // check auth form middleware
 passport.use(new LocalStrategy(
-    (username, password, done) => {
+    async (username, givenPass, done) => {
         // done = done.bind(this, null)
         // check user
-        if(!userExists(username)) return done(null, false);
+        const doesUserExist = await userExists(username);
+        if(!doesUserExist) return done(null, false);
 
-        console.log("USER", getUser(username));
         // check pass
         // return done(checkPass(username, password))
-
-        return checkPass(username, password) === true 
+        // get users current pass
+        const { password } = await getUser(username);
+        const passIsOkay = await checkPass(password, givenPass);
+        return passIsOkay 
             ? done(null, true) 
             : done(null, false);
      }
@@ -72,6 +78,30 @@ passport.use(new LocalStrategy(
     app.get('/profile', SessionMiddleware, Profile.getData);
     // update profile
     app.put('/profile', SessionMiddleware, Profile.update);
+
+// GAME
+    app.get('/game/user/heroes', SessionMiddleware, Game.getUserHeroes);
+    app.get('/game/user/items', SessionMiddleware, Game.getUserItems);
+
+    app.post('/game/user/heroes/send', SessionMiddleware, Game.sendUserHero)
+
+// MEDIUMS
+const ItemsModel = require("./models/Items");
+// const HeroesModel = require("./models/Heroes");
+    // ITEMS
+    // show possible items
+    app.get('/items', async (req, res) => {
+        const data = await ItemsModel.fetchAll();
+        res.json(data.slice(0, 10));
+    })
+    // HEROES
+    // fetchHero
+    // app.get('/heroes/:id', async (req, res) => {
+    //     const data = await HeroesModel.fetchHero(req.params.id);
+    //     res.json(data);
+    // })
+    
+
 
 // Home 
 app.get('/', SessionMiddleware, (req, res) => {
