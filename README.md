@@ -1,5 +1,5 @@
 # Current Assignment Notes
-<h1>Note: This time we did not do the commits separately, instead we did all the commits from one machine due to our personal reasons.</h1>
+<h1>Note: This time we did not do the commits separately, instead we did all the commits from one machine due to an issue that occured during a commit from another machine.</h1>
 </hr>
 <h2> ⭐️ &nbsp; All requirements were met except for (ER Diagram of Database) which we couldn't do due to the project complexity that we chose</h2>
 <h4>In order to test it out:</h4>
