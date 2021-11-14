@@ -5,7 +5,7 @@
 <h4>In order to test it out:</h4>
 <ol>
  <li>Install all dependencies in all 3 folders [front, back, storage] </li>
- <li>Cd into "back" folder and run 'npm run dev'</li>
+ <li>Cd into "back" folder and run 'npm start'</li>
  <li>Finally, start up our created api inside storage folder by running 'npm start'</li>
 </ol>
  <h4>Short description: This is the prototype of the up-coming game. By now you have the following functionalities: Login/Register, Send Your Hero and claim Items. Each User gets random hero after registering. Similarly, when user sends their Hero into an adventure, it will always lead to immidiate item discovery and immiditate claiming of that same item. Hovewer in the next version, this will expand into long lasting event which will not always bring an item or even some gold.</h4>
