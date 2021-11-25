@@ -1,4 +1,43 @@
-# Current Assignment Notes
+# New Notes!
+
+### ☢️ __In Progress__ ☢️
+- mission of the site
+- team member roles and bio
+- goals of site
+- code snippets of interaction with RESTFul API
+- tools and resources used and provide a url to your hosted site
+
+
+
+
+
+# Requirements
+### Back-end Features
+-  ~~CRUD~~
+- ~~Authentication and Authorization~~
+- ~~RESTFul API connection~~ (our own)
+- __Unit test__
+
+### Front-end Features
+
+- __Implement a charting library__
+- ~~End-user manipulation of visualized data~~ (game process)
+- ~~Site must be responsive~~
+
+### Technology, Tools and Process
+- __Properly configured CI/CD server__ (almost done)
+- __Production environment is configured and properly hosted via World Wide Web.__ (almost done)
+- __Distributed commit history from each team member using version control__ (in progress...)
+
+### Security Implementation
+- ~~Paramaterized queries for SQL statements~~
+- ~~Mitigate Brute Force Atacks~~
+- ~~Application configuration files properly secured~~
+
+
+## License MIT
+
+# Prev Assignment Notes
 <h1>Note: This time we did not do the commits separately, instead we did all the commits from one machine due to an issue that occured during a commit from another machine.</h1>
 </hr>
 <h2> ⭐️ &nbsp; All requirements were met except for (ER Diagram of Database) which we couldn't do due to the project complexity that we chose</h2>
