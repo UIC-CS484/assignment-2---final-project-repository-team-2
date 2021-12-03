@@ -10,6 +10,11 @@ module.exports = merge(common, {
 
   // Control how source maps are generated
   devtool: 'inline-source-map',
+  output: {
+    path: paths.dev,
+    filename: 'js/[name].bundle.js',
+    publicPath: '/',
+  },
 
   // // Spin up a server for quick development
   // devServer: {

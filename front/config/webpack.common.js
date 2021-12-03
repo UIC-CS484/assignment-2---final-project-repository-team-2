@@ -18,11 +18,6 @@ module.exports = {
   entry: pagesConfig,
 
   // Where webpack outputs the assets and bundles
-  output: {
-    path: paths.serverPublic,
-    filename: '[name].bundle.js',
-    publicPath: '/',
-  },
   optimization: {
     splitChunks: {
       chunks: "all",
