@@ -1,40 +1,103 @@
 body {
   padding: 60px;
+  color: white;
+  font-family: 'Comfortaa', cursive !important;
+}
+
+#bg-image {
+  background-size: cover;
+  background-image: url("https://i.vimeocdn.com/video/748631116-79c46dcc9472bc5839fc1a3f05c184f6e2a5e06363e99a362379ddf6ffc9eca6-d?mw=2000&mh=1125&q=70");
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+
+.custom-username-input {
+  display: inline-block;
+  max-width: 100px;
+}
+
+.custom-btn-font-small {
+  font-size: 16px;
+  color: white;
 }
 
 .single-item-box {
-    border: 1px solid black;
-    padding: 20px;
-    margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
 
-.single-item-box.found {
+.single-item-box p {
+  color: #000000;
+}
+
+.cutom-panel-bg-color {
+  background-color:  rgba(155, 119, 38, 0.6); 
+}
+
+.single-item-box:hover {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 19px -2px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 0px 0px 19px -2px rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+.single-item-box.artifact {
+  background-color: #3367b0;
+}
+
+.single-item-box.uncommon {
     background-color: cadetblue;
 }
 
-
-#heroes-container {
-    width: 100%;
+.single-item-box.common {
+    background-color: antiquewhite;
 }
+
+.single-item-box.rare {
+  background-color:darksalmon;
+}
+
+.single-item-box.legendary {
+  background-color: palevioletred;
+}
+
+
+#addHeroBtn {
+  cursor: pointer;
+}
+
+.auth-content {
+  color: black;
+}
+
 
 .single-hero-box {
     position: relative;
-    border: 1px solid black ;
     padding: 20px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
     transition: all 0.3s ease;
+
+    color: white;
+
+    background-color:  rgba(155, 119, 38, 0.6); 
 }
 
-.single-hero-box:hover {
+.hero-box-inner-details {
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .single-hero-box:hover {
     background-color: black;
     color: white;
     cursor: pointer;
-}
+} */
 
 .hero-name-p:hover {
   text-decoration: underline;
@@ -135,6 +198,9 @@ body {
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 100;
+
+    overflow-y: auto;
+    
 }
 
 #modal {
@@ -142,7 +208,13 @@ body {
     background-color: white;
     min-height: 20vh;
 
+    color: black;
+
     padding: 30px;
+}
+
+#reloadTraderItemsBtn {
+  cursor: pointer;
 }
 
 .closeModalBtn {
