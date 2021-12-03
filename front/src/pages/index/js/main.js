@@ -1,33 +1,28 @@
-// boostrap js
-import 'bootstrap';
-// css
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
+// TODO: 
+// Send, info, sell [DONE!] 
+// Trader, buy, claim reward, raspberry
 
+import Core from '../../../js/Core';
 
-import { StateController } from '../../../js/export';
-import ButtonsController from './ButtonsController';
+import { Loader, StateController } from '../../../js/export';
+import ActionsController from './Actions/ActionsController';
+import { ModalProcedures } from "./UI/Components/ModalProcedures";
 // all ui components
-import UIController from './UIController';
+import UIController from './UI/UIController';
 StateController.subscribe(UIController.stateChanged, UIController);
 
 // on bootup
 // fetch items
-async function bootup() {
-
-    const profileRes = await fetch("/profile");
-    const profile = await profileRes.json();
-    
-    const itemsRes = await fetch("/game/user/items");
-    const items = await itemsRes.json();
-
-    console.log(items);
-    
-    const heroesRes = await fetch("/game/user/heroes");
-    const heroes = await heroesRes.json();
-
-    StateController.set({ items, profile, heroes });
-}
-
-bootup();
+(async function bootup() {
+    Core.load();
+    // all fetch promises
+    UIController.reload();
+    // welcome message if the user is the first time in the game
+    if(localStorage.getItem('first_time') === null) {
+        ModalProcedures.showWelcomeMessage();
+        localStorage.setItem('first_time', "false");
+    }
+})();

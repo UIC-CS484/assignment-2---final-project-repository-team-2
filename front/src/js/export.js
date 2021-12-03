@@ -7,9 +7,10 @@ import StateController from "./Controllers/StateController";
 import { NotificationController } from "./Controllers/NotificationCtr/NotificationController";
 
 
-// Helpers
-import { Loader } from "./Helpers/Loader";
-import { Modal } from "./Helpers/Modal";
+// Modules
+import { Loader } from "./Modules/Loader";
+import { Modal } from "./Modules/Modal";
+import { Time } from "./Modules/Time";
 
 export { 
     StateController, 

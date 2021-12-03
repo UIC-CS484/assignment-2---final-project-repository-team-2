@@ -1,12 +1,7 @@
 // interface
 // login, logout -> sqlite + passport
 
-import StateController from "./StateController";
-
-const { 
-    getCookie, 
-    setCookie 
-} = require("../Helpers/cookie");
+import { Modal } from "../export";
 
 const AuthController = (function() {
 function login() {
@@ -65,8 +60,21 @@ function register() {
         }) // body data type must match "Content-Type" header
     })
     .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => err.json())
+    .then((data) => {
+        // TODO Improve this 
+        if(data.error) {
+            Modal.clearModal();
+            Modal.populateModal("Error", `Server responded with: <u>${data.error}</u>`, "");
+            Modal.show();
+        } else {
+            Modal.clearModal();
+            Modal.populateModal("Notification", "You have been successfully registered!", "");
+            Modal.show();
+        }
+    })
+    .catch((err) => err.json());
+
+
 }
 
 return {

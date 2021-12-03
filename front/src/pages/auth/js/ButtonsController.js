@@ -22,7 +22,6 @@ class ButtonsControllerClass {
     showBtn(BTNS.loginBtn)
     // Button listeners
     BTNS.loginBtn.addEventListener('click', login)
-    BTNS.logoutBtn.addEventListener('click', logout)
     BTNS.registerBtn.addEventListener('click', register)
   }
 
