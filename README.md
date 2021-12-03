@@ -29,7 +29,7 @@
 ### Technology, Tools and Process
 - __Properly configured CI/CD server__ (done locally)
 - ~~Production environment is configured and properly hosted via World Wide Web.~~
-- ~~Distributed commit history from each team member using version ~~
+- ~~Distributed commit history from each team member using version~~
 
 ### Security Implementation
 - ~~Paramaterized queries for SQL statements~~
