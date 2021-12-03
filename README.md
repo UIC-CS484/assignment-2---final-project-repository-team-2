@@ -1,33 +1,29 @@
 # New Notes!
 
-### ☢️ __In Progress__ ☢️
-- mission of the site
-- team member roles and bio
-- goals of site
-- code snippets of interaction with RESTFul API
-- tools and resources used and provide a url to your hosted site
-
-
-
-
+### ☢️ Done ☢️
+- ~~mission of the site~~
+- ~~team member roles and bio~~
+- ~~goals of site~~
+- ~~code snippets of interaction with RESTFul API~~
+- ~~tools and resources used and provide a url to your hosted site~~
 
 # Requirements
 ### Back-end Features
 -  ~~CRUD~~
 - ~~Authentication and Authorization~~
 - ~~RESTFul API connection~~ (our own)
-- __Unit test__
+- ~~Unit test~~
 
 ### Front-end Features
 
-- __Implement a charting library__
+- __Implement a charting library__ (decided to use another approach)
 - ~~End-user manipulation of visualized data~~ (game process)
 - ~~Site must be responsive~~
 
 ### Technology, Tools and Process
-- __Properly configured CI/CD server__ (almost done)
-- __Production environment is configured and properly hosted via World Wide Web.__ (almost done)
-- __Distributed commit history from each team member using version control__ (in progress...)
+- __Properly configured CI/CD server__ (done locally)
+- ~~Production environment is configured and properly hosted via World Wide Web.~~
+- ~~Distributed commit history from each team member using version ~~
 
 ### Security Implementation
 - ~~Paramaterized queries for SQL statements~~
