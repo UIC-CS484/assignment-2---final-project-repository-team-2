@@ -1,11 +1,17 @@
 # New Notes!
 
-### ☢️ Done ☢️
-- ~~mission of the site~~
-- ~~team member roles and bio~~
-- ~~goals of site~~
-- ~~code snippets of interaction with RESTFul API~~
-- ~~tools and resources used and provide a url to your hosted site~~
+## Game: https://knight-app-backend-3.herokuapp.com/
+## Api: https://knight-game-storage-1.herokuapp.com/
+
+### In order to start it:
+- install all dependencies via running "npm i" inside all folders: back, front, storage, BuildManager
+- start the front end by running "npm start" inside front folder.
+- start the storage api by running "npm start" inside storage folder.
+- start the back end by running "npm start" inside back folder.
+- Done! Now you can go to http://localhost:3000/ and see this app running locally.
+
+
+
 
 # Requirements
 ### Back-end Features
