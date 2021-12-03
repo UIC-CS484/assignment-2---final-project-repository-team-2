@@ -1,12 +1,14 @@
 const fetch = require('node-fetch');
-const { DBConfig, allQ } = require('../DB');
+const { DBConfig, allQ, runQ } = require('../DB');
 
 
 const Items = {
     fetchAll,
     fetchItem,
     fetchUserItemsIds,
-    fetchRandomItem
+    fetchRandomItem,
+    deleteUserItemById,
+    saveUserItem
 }
 
 async function fetchAll() {
@@ -37,5 +39,26 @@ async function fetchUserItemsIds(user_id) {
 
     return userItemsIds;
 }
+
+async function deleteUserItemById(item_id) {
+    const q = DBConfig.items.queries.deleteById(item_id);
+    const deleteRes = await runQ(q);
+
+    return deleteRes;
+}
+
+
+async function saveUserItem(user_id, item_id) {
+    const saveItemQuery = DBConfig.items.queries.insert(user_id, item_id);
+    const saveQRes = await runQ(saveItemQuery);
+
+    if(!saveQRes.success) {
+        console.log(saveQRes.err);
+        return false;
+    }
+    // TODO return result of query
+    return true;
+}
+
 
 module.exports = Items;

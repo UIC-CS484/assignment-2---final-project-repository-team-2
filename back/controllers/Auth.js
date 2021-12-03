@@ -3,8 +3,9 @@ const path = require('path');
 
 const { _jsonError } = require("../misc");
 const { giveUserHero, fetchRandomHero } = require('../models/Heroes');
-const { sessionExists, getSessionUsername, createSession, removeSession } = require('../models/Sessions');
+const { sessionExists, getSessionUsername, createSession, removeSession, getSession } = require('../models/Sessions');
 const { userExists, createUser, getUser } = require('../models/Users');
+const { IS_DEV } = require('./Environment');
 
 const Auth = {
     index,
@@ -24,15 +25,16 @@ async function index(req, res) {
     } 
     // if no session is present 
     else {
-        res.sendFile(path.join(__dirname + '/../public/auth.html'));
+        // TODO: change to redirect to /auth and process it in index.js
+        res.sendFile(path.join(__dirname + `/../${IS_DEV() ? "dev" : "prod"}/auth.html`));
     }
 };
 
 async function login(req, res) {
     // set new session id associated with username
-    const sessionID = await createSession(req.body.username);
+    const sessionID = await createSession(req.body.username, 60*30); // 30 mins
     // set cookie
-    res.cookie("sessionID", sessionID, { maxAge: 300000 }); // 5 mins
+    res.cookie("sessionID", sessionID, { maxAge: 1000 * 60 * 60 * 24 * 30 }); // 30 days
     // send response
     res.redirect("/");
 };
@@ -40,7 +42,7 @@ async function login(req, res) {
 async function register(req, res) {
     let userData;
     // check for needed fields
-    if (req.body?.password === undefined || req.body?.username === undefined) {
+    if (!req.body.hasOwnProperty("password") || !req.body.hasOwnProperty("username")) {
         res.status(404).json(_jsonError("Wrong credentials or user does not exist!"));
         return;
     }
@@ -52,14 +54,13 @@ async function register(req, res) {
         return;
     }
 
-    userData = await createUser(username, password);
+    userData = await createUser(username, password, 100);
     
     // give random hero to user
     const { id } = await getUser(username);
     // get random heroid
     const randHero = await fetchRandomHero();
     const result = await giveUserHero(id, randHero.id);
-
 
     res.json({...userData, id});
 }

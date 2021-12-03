@@ -4,5 +4,9 @@ module.exports = {
             error: text,
             ...payload
         }
-    }
+    },
+    getNowSeconds: function () {
+        return Math.round(Date.now() / 1000);
+    },
+    generateRandNum : (min, max) => Math.floor(Math.random() * max) + min
 }

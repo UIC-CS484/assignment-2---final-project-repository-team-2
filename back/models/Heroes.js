@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
-const { DBConfig, allQ, runQ } = require('../DB');
+const { DBConfig, allQ, runQ, showAllRows } = require('../DB');
+const { getAdventureByHero } = require('./Adventure');
 
 const Heroes = {
     fetchAll,
@@ -34,9 +35,9 @@ async function fetchRandomHero() {
 async function fetchUserHeroes(user_id) {
     // get all heroes associated with user
     const q = DBConfig.heroes.queries.getByUserId(user_id);
-    const userHeroesIds = await allQ(q);
+    const qRes = await allQ(q); 
 
-    return userHeroesIds;
+    return qRes;
 }
 
 async function updateUserHero(user_id, hero_record_id, is_available) {
@@ -51,6 +52,7 @@ async function updateUserHero(user_id, hero_record_id, is_available) {
 
     return true;
 }
+
 
 async function giveUserHero(user_id, hero_record_id) {
     const insertQ = DBConfig.heroes.queries.insert(user_id, hero_record_id);

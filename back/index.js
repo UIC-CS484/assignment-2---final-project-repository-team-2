@@ -6,7 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-
+const { IS_DEV } = require("./controllers/Environment");
 
 // Middlewares
 const { 
@@ -27,7 +27,7 @@ const {
 
 // create express instance
 const app = express()
-const port = 3000
+const port = IS_DEV() === true ? 3000 : 80;
 
 // CORS
 app.use(cors())
@@ -80,10 +80,17 @@ passport.use(new LocalStrategy(
     app.put('/profile', SessionMiddleware, Profile.update);
 
 // GAME
-    app.get('/game/user/heroes', SessionMiddleware, Game.getUserHeroes);
     app.get('/game/user/items', SessionMiddleware, Game.getUserItems);
+    app.post('/game/user/items/sell', SessionMiddleware, Game.sellUserItem);
+    app.post('/game/user/items/buy', SessionMiddleware, Game.buyUserItem);
+    app.get('/game/user/items/random', SessionMiddleware, Game.getRandomItems);
 
+
+    app.get('/game/user/heroes', SessionMiddleware, Game.getUserHeroes);
     app.post('/game/user/heroes/send', SessionMiddleware, Game.sendUserHero)
+    app.post('/game/user/heroes/claim', SessionMiddleware, Game.claimUserHero)
+    app.get('/game/user/heroes/random', SessionMiddleware, Game.getRandomHeroes);
+    app.post('/game/user/heroes/buy', SessionMiddleware, Game.buyUserHero);
 
 // MEDIUMS
 const ItemsModel = require("./models/Items");
@@ -105,16 +112,18 @@ const ItemsModel = require("./models/Items");
 
 // Home 
 app.get('/', SessionMiddleware, (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+  res.sendFile(path.join(__dirname + `/${IS_DEV() ? "dev" : "prod"}/index.html`));
 });
 
 // For serving static files 
-app.use(express.static(path.join(__dirname, 'public')));
+console.log("IS_DEV: ", process.env.NODE_ENV.includes("development"))
+
+app.use(express.static(path.join(__dirname, IS_DEV() ? "dev" : "prod")));
 
 // 404 redirect
-app.get("*", (req, res) => {
-    res.redirect("/");
-});
+// app.get("*", (req, res) => {
+//     res.redirect("/");
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
