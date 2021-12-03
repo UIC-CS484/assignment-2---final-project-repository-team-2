@@ -1,4 +1,4 @@
-# New Notes!
+# Game Released!
 
 ## Game: https://knight-app-backend-3.herokuapp.com/
 ## Api: https://knight-game-storage-1.herokuapp.com/
