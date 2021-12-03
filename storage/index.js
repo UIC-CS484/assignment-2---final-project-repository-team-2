@@ -1,15 +1,52 @@
 const express = require('express');
 const { _jsonError } = require('../back/misc');
 
-const items = require('./test1');
-let heroes = require('./heroes.json')
+// load items
+  let items = require('./test1');
+// form rarities
+  const pricesCoeff = {
+    'rare': 40, 
+    'uncommon': 30, 
+    'artifact': 20, 
+    'common': 10, 
+    'legendary': 50
+  }
+  let rarities = [];
+  items.forEach(item => rarities.push(item["rarity"]));
+  rarities = Array.from(new Set(rarities));
+  rarities = rarities.filter(el => el.split(" ").length === 1);
+  // go through each item and fix the rarity
+  items = items.map((item) => {
+    const rarity = Object.keys(pricesCoeff).includes(item.rarity) ? item.rarity : Object.keys(pricesCoeff)[generateRandNum(0, Object.keys(pricesCoeff).length - 1)];
+    return {
+      ...item,
+      rarity
+    }
+  })
 
+// add price filed to each item's field
+// based on rarity of the item
+  items = items.map((item) => {
+    const price = Math.round((Math.random() + 0.1) * pricesCoeff[item.rarity]);
+    return {
+      ...item,
+      price
+    }
+  })
+
+  
+  let heroes = require('./heroes.json')
+
+  
+  
 heroes = heroes.masculine.dwarf.map((imageName) => {
   return {
     name: imageName.split(".")[0],
-    image: `https://www.herebetaverns.com/images/characters/dmheroes/masculine/dwarf/${imageName}`
+    image: `https://www.herebetaverns.com/images/characters/dmheroes/masculine/dwarf/${imageName}`,
+    price: generateRandNum(500, 1500)
   }
 });
+
 
 
 const app = express()
@@ -30,7 +67,6 @@ app.get('/items', (req, res) => {
 app.get('/items/random', (req, res) => {
   // generate idx
   const idx = generateRandNum(0, items.length - 1);
-  console.log(idx);
   res.json({...items[idx], id: idx});
 })
 

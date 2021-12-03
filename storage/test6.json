@@ -1,0 +1,516 @@
+[
+  {
+    "ideal": "To see their people in their rightful place as rulers.",
+    "races": ""
+  },
+  {
+    "ideal": "There are always those whose need is greater than their own.",
+    "races": ""
+  },
+  {
+    "ideal": "Their needs are more important than anyone else's.",
+    "races": ""
+  },
+  {
+    "ideal": "There is always a silver lining you just have to be willing to look hard enough.",
+    "races": ""
+  },
+  {
+    "ideal": "The world is a dark place - and people make it that way.",
+    "races": ""
+  },
+  {
+    "ideal": "If a job is worth doing it's worth being paid for.",
+    "races": ""
+  },
+  {
+    "ideal": "The way to make the world better is a single act of kindness.",
+    "races": ""
+  },
+  {
+    "ideal": "Violence is the only language universally understood.",
+    "races": ""
+  },
+  {
+    "ideal": "The world is coming to an end and they must warn people.",
+    "races": ""
+  },
+  {
+    "ideal": "They will protect those who cannot protect themselves.",
+    "races": ""
+  },
+  {
+    "ideal": "All beings are equals and deserve to be treated as such.",
+    "races": ""
+  },
+  { "ideal": "The gods reward perseverance", "races": "" },
+  { "ideal": "Their purpose is to serve.", "races": "" },
+  { "ideal": "They will not live in chains.", "races": "" },
+  { "ideal": "There is endless knowledge to be learned.", "races": "" },
+  { "ideal": "The truth must be know no matter the cot.", "races": "" },
+  {
+    "ideal": "They will leave the world a better place than they found it.",
+    "races": ""
+  },
+  { "ideal": "Emotions cloud your judgement.", "races": "" },
+  { "ideal": "Power comes to those brave enough to seize it.", "races": "" },
+  { "ideal": "We can always improve ourselves.", "races": "" },
+  { "ideal": "There is more that unites us than divides us.", "races": "" },
+  { "ideal": "Those that break the law deserve to be punished.", "races": "" },
+  { "ideal": "Gold is the only true path to freedom.", "races": "" },
+  { "ideal": "Our elders deserve respect.", "races": "" },
+  { "ideal": "Everyone should be free to follow their dreams.", "races": "" },
+  { "ideal": "No one tells them what to do.", "races": "" },
+  { "ideal": "The only constant in this world is change.", "races": "" },
+  { "ideal": "Happiness is all that matters.", "races": "" },
+  { "ideal": "Only the strong survive.", "races": "" },
+  { "ideal": "Without faith we are animals.", "races": "" },
+  { "ideal": "Their family will always come first.", "races": "" },
+  { "ideal": "Tradition must be preserved.", "races": "" },
+  { "ideal": "Charity is critical to living a good life.", "races": "" },
+  { "ideal": "Tradition holds us back.", "races": "" },
+  { "ideal": "Charity start at home.", "races": "" },
+  { "ideal": "We must embrace change.", "races": "" },
+  { "ideal": "Change is good.", "races": "" },
+  { "ideal": "Change is frightening.", "races": "" },
+  { "ideal": "Power corrupts all those it touches.", "races": "" },
+  {
+    "ideal": "Their faith is the most important aspect of their life.",
+    "races": ""
+  },
+  { "ideal": "Faith is for the weak.", "races": "" },
+  { "ideal": "They don't need anyone else to be happy.", "races": "" },
+  {
+    "ideal": "The happiness of their friends is more important than their own happiness.",
+    "races": ""
+  },
+  { "ideal": "They will protect their friends at any cost.", "races": "" },
+  { "ideal": "Friends are a liability.", "races": "" },
+  { "ideal": "Without honor they are nothing.", "races": "" },
+  { "ideal": "Better to die with honor than live without.", "races": "" },
+  { "ideal": "Honor is for fools.", "races": "" },
+  { "ideal": "Greed is contagious we must resist its pull.", "races": "" },
+  { "ideal": "There is no such thing as too much.", "races": "" },
+  { "ideal": "People will always hurt you.", "races": "" },
+  { "ideal": "They are searching for redemption.", "races": "" },
+  { "ideal": "They are trying to atone for their past.", "races": "" },
+  { "ideal": "Beauty can be found all around us.", "races": "" },
+  { "ideal": "They believe they are the chosen one.", "races": "" },
+  {
+    "ideal": "There is no problem that cannot be solved by thinking.",
+    "races": ""
+  },
+  { "ideal": "They will prove themselves to the world.", "races": "" },
+  { "ideal": "They will prove themselves to their family.", "races": "" },
+  { "ideal": "Community is at the heart of everything they do.", "races": "" },
+  { "ideal": "The wealth belongs with the people.", "races": "" },
+  { "ideal": "They are only interested in money and fame.", "races": "" },
+  { "ideal": "No one is above the law.", "races": "" },
+  { "ideal": "Everyone deserves a fair trial.", "races": "" },
+  { "ideal": "Everyone deserves a chance at life.", "races": "" },
+  { "ideal": "Criminals deserve death.", "races": "" },
+  { "ideal": "Real art comes from pain.", "races": "" },
+  { "ideal": "Never lie - especially to yourself.", "races": "" },
+  { "ideal": "Their talents deserve to be shared.", "races": "" },
+  { "ideal": "The only company one needs is themselves.", "races": "" },
+  { "ideal": "Blood runs thicker than water.", "races": "" },
+  { "ideal": "Family is more than blood.", "races": "" },
+  { "ideal": "Blood is power.", "races": "" },
+  { "ideal": "They will do anything to secure their legacy.", "races": "" },
+  { "ideal": "Glory can only be found at the end of a sword.", "races": "" },
+  { "ideal": "Glory is for fools.", "races": "" },
+  { "ideal": "Beauty is the only thing worth fighting for.", "races": "" },
+  { "ideal": "Love is the only thing worth dying for.", "races": "" },
+  { "ideal": "Nothing is worth dying for.", "races": "" },
+  { "ideal": "People matter not ideals.", "races": "" },
+  { "ideal": "Their position commands respect.", "races": "" },
+  { "ideal": "Respect must be earned.", "races": "" },
+  { "ideal": "A live of service is a life well lived.", "races": "" },
+  { "ideal": "We can improve ourselves every day.", "races": "" },
+  { "ideal": "The sea is the only place I can be free.", "races": "" },
+  { "ideal": "Emotions have no place in combat.", "races": "" },
+  { "ideal": "Emotions hold us back.", "races": "" },
+  { "ideal": "Love makes us weak.", "races": "" },
+  { "ideal": "No nation is more important than the people.", "races": "" },
+  { "ideal": "Freedom must be fought for.", "races": "" },
+  { "ideal": "Peace demands constant effort.", "races": "" },
+  { "ideal": "War is the default peace the exception.", "races": "" },
+  { "ideal": "Peace is a lie.", "races": "" },
+  { "ideal": "War only benefits the wealthy.", "races": "" },
+  { "ideal": "The workers should own the means of production.", "races": "" },
+  { "ideal": "A person is smart. People are stupid.", "races": "" },
+  { "ideal": "People are inherently greedy.", "races": "" },
+  { "ideal": "People are ultimately good.", "races": "" },
+  { "ideal": "Compliance is defeat.", "races": "" },
+  { "ideal": "The rich deserve to be torn down.", "races": "" },
+  { "ideal": "Poor people are a plague.", "races": "" },
+  { "ideal": "The true path to power is understanding.", "races": "" },
+  { "ideal": "They seek the thrill of discovery.", "races": "" },
+  { "ideal": "All that matters is their friends.", "races": "" },
+  { "ideal": "They would do anything for their gang.", "races": "" },
+  { "ideal": "They would do anything for their nation.", "races": "" },
+  { "ideal": "Revelry in chaos is the ultimate achevement.", "races": "" },
+  {
+    "ideal": "Anything is possible with a few gold coins in your pocket.",
+    "races": ""
+  },
+  { "ideal": "Dream big, and let no one tell you otherwise.", "races": "" },
+  {
+    "ideal": "They would rather live a lifetime in the woods than spend an hour in a city.",
+    "races": ""
+  },
+  {
+    "ideal": "The fight against evil is never ending, and they are ever-vigilant.",
+    "races": ""
+  },
+  {
+    "ideal": "The fight against good is never ending, and they are ever-vigilant.",
+    "races": ""
+  },
+  {
+    "ideal": "They will always ensure that a task is done right, and not quickly.",
+    "races": ""
+  },
+  {
+    "ideal": "We must respect our elders and those who came before.",
+    "races": ""
+  },
+  {
+    "ideal": "They inform their decisions from historical precedents.",
+    "races": ""
+  },
+  {
+    "ideal": "Stand tall before your fears, otherwise they will consume you whole.",
+    "races": ""
+  },
+  { "ideal": "Fleeing from a superior foe is not weakness.", "races": "" },
+  { "ideal": "They are drawn to beautiful works of art.", "races": "" },
+  { "ideal": "They are drawn to places of dark worship.", "races": "" },
+  { "ideal": "They'll never be bored with a dagger in hand.", "races": "" },
+  {
+    "ideal": "They'll never be bored with a full tankard in hand.",
+    "races": ""
+  },
+  {
+    "ideal": "They would do anything to survive, including leaving allies behind.",
+    "races": ""
+  },
+  { "ideal": "They would do anything for king and country.", "races": "" },
+  {
+    "ideal": "A true patriot never follows their leaders blindly, and is considerate of their actions.",
+    "races": ""
+  },
+  { "ideal": "They live for the people in their neighborhood.", "races": "" },
+  {
+    "ideal": "Civility is only for those who haven't spent time out in the wilderness.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when money is on the line.", "races": "" },
+  { "ideal": "They are drawn to follow strong leaders.", "races": "" },
+  { "ideal": "They are drawn to protect places of beauty.", "races": "" },
+  { "ideal": "They are drawn to protect places of worship.", "races": "" },
+  { "ideal": "They are drawn to help others in need.", "races": "" },
+  { "ideal": "They are drawn to help those that are lost.", "races": "" },
+  {
+    "ideal": "They are drawn to walk the wilderness and help those they find.",
+    "races": ""
+  },
+  { "ideal": "They are drawn to heal the wounds of animals.", "races": "" },
+  { "ideal": "They are drawn to understanding mystical theory.", "races": "" },
+  { "ideal": "They are drawn to fighting strong foes.", "races": "" },
+  { "ideal": "They are drawn to create elaborate stone statues.", "races": "" },
+  { "ideal": "They are drawn to places of mystical power.", "races": "" },
+  { "ideal": "They would do anything for a friend.", "races": "" },
+  { "ideal": "They would do anything for the right price.", "races": "" },
+  { "ideal": "They would do anything for their family.", "races": "" },
+  { "ideal": "They would do anything for their loved one.", "races": "" },
+  { "ideal": "They would do anything to gain incredible power.", "races": "" },
+  { "ideal": "They would do anything to become wealthy.", "races": "" },
+  { "ideal": "They would do anything to secure their legacy.", "races": "" },
+  {
+    "ideal": "They would do anything to protect their lifestyle.",
+    "races": ""
+  },
+  {
+    "ideal": "They would do anything for a chance to perform on stage.",
+    "races": ""
+  },
+  {
+    "ideal": "They would do anything for a chance to meet with a famous artist.",
+    "races": ""
+  },
+  {
+    "ideal": "They would do anything to gan entry into academia.",
+    "races": ""
+  },
+  { "ideal": "They would do anything to learn about alchemy.", "races": "" },
+  { "ideal": "They would do anything to learn how to heal.", "races": "" },
+  {
+    "ideal": "They would do anything to protect a circle of druids.",
+    "races": ""
+  },
+  { "ideal": "They would do anything to overcome a rival.", "races": "" },
+  {
+    "ideal": "They would do anything to catch the attention of a powerful mage.",
+    "races": ""
+  },
+  {
+    "ideal": "They would do anything to catch the attention of a powerful warrior.",
+    "races": ""
+  },
+  { "ideal": "They would do anything to remain incognito.", "races": "" },
+  {
+    "ideal": "They would do anything to ensure that a loved one survives disaster.",
+    "races": ""
+  },
+  { "ideal": "The true path to power is friendship.", "races": "" },
+  { "ideal": "The true path to power is magical knowledge.", "races": "" },
+  { "ideal": "The true path to power is overwhelming strength.", "races": "" },
+  { "ideal": "The true path to power is a keen mind.", "races": "" },
+  { "ideal": "The true path to power is swift feet.", "races": "" },
+  { "ideal": "The true path to power is military strength.", "races": "" },
+  { "ideal": "The true path to power is kindless.", "races": "" },
+  {
+    "ideal": "The true path to power is a gigantic steam-powered automaton.",
+    "races": ""
+  },
+  { "ideal": "The true path to power is an eldritch pact.", "races": "" },
+  { "ideal": "The true path to power is a deal with the devil.", "races": "" },
+  {
+    "ideal": "The true path to power is at the end of their fist.",
+    "races": ""
+  },
+  { "ideal": "All that matters is personal comfort.", "races": "" },
+  {
+    "ideal": "All that matters is coming home at the end of the day.",
+    "races": ""
+  },
+  { "ideal": "All that matters is a profitable shop.", "races": "" },
+  { "ideal": "All that matters is a loving family.", "races": "" },
+  { "ideal": "All that matters is a cold sword in their hand.", "races": "" },
+  { "ideal": "All that matters is a successful hunt.", "races": "" },
+  { "ideal": "All that matters is mystical knowledge.", "races": "" },
+  { "ideal": "All that matters is the king is happy.", "races": "" },
+  { "ideal": "All that matters is their rival is defeted.", "races": "" },
+  { "ideal": "All that matters is time to relax in the sun.", "races": "" },
+  {
+    "ideal": "All that matters is finding quality time for friends.",
+    "races": ""
+  },
+  {
+    "ideal": "They would rather spend an afternoon with a book than an evening with strangers.",
+    "races": ""
+  },
+  { "ideal": "They dream of owning a bookstore.", "races": "" },
+  { "ideal": "They dream of sailing the seas.", "races": "" },
+  { "ideal": "They dream of finding lost treasure.", "races": "" },
+  { "ideal": "They dream of joining a traveling music group.", "races": "" },
+  { "ideal": "They dream of singing in front of thousands.", "races": "" },
+  { "ideal": "They dream of perfecting a baking recipe.", "races": "" },
+  { "ideal": "They dream of owning their own tavern.", "races": "" },
+  { "ideal": "They dream of becoming a mage.", "races": "" },
+  { "ideal": "They dream of becoming a renowned warrior.", "races": "" },
+  { "ideal": "They dream of travelling to far of places.", "races": "" },
+  { "ideal": "They dream of exploring lost civilizations.", "races": "" },
+  { "ideal": "They dream of discovering a new kind of alchemy.", "races": "" },
+  { "ideal": "They dream of bringing the dead back to life.", "races": "" },
+  { "ideal": "They dream of providing for their loved ones.", "races": "" },
+  { "ideal": "They dream of everlasting glory.", "races": "" },
+  { "ideal": "They dream of overthrowing a local ruler.", "races": "" },
+  { "ideal": "They dream of having a drink named after them.", "races": "" },
+  { "ideal": "They dream of seeing a dragon.", "races": "" },
+  { "ideal": "They dream of becoming a necromancer.", "races": "" },
+  { "ideal": "They dream of writing a great novel.", "races": "" },
+  { "ideal": "They only feel alive when running from authority.", "races": "" },
+  {
+    "ideal": "They only feel alive when fighting a superior foe.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when swimming in the ocean.", "races": "" },
+  {
+    "ideal": "They only feel alive when cleaning out their home.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when drunk at the tavern.", "races": "" },
+  {
+    "ideal": "They only feel alive when preforming for their loved ones.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when performing death-defying acts.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when reading from lost tomes.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when searching for magical artefacts.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when creating brand-new alchemy recipes.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when teaching new generations of students.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when breaking the law.", "races": "" },
+  {
+    "ideal": "They only feel alive when giving selflessly to others.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when hunting wild game.", "races": "" },
+  {
+    "ideal": "They only feel alive when walking through untamed wilderness.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when dancing.", "races": "" },
+  {
+    "ideal": "They only feel alive when searching for lost knowledge.",
+    "races": ""
+  },
+  {
+    "ideal": "They only feel alive when baking new kinds of pastries.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when dining on exotic foods.", "races": "" },
+  {
+    "ideal": "They only feel alive when showing hospitality to foriegn travellers.",
+    "races": ""
+  },
+  { "ideal": "They only feel alive when helping the sick.", "races": "" },
+  {
+    "ideal": "Anything is possible with a swift steed between their legs.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with the right set of connections.",
+    "races": ""
+  },
+  { "ideal": "Anything is possible with a sword at your side.", "races": "" },
+  {
+    "ideal": "Anything is possible with their friends at their side.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with power at their beck and call.",
+    "races": ""
+  },
+  { "ideal": "Anything is possible with the right leverage.", "races": "" },
+  { "ideal": "Anything is possible with arcane knowledge.", "races": "" },
+  { "ideal": "Anything is possible with a wink and a smile.", "races": "" },
+  {
+    "ideal": "Anything is possible when applying pressure at the right places.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with a crooked ruler in their corner.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with the theives' guild at their beck and call.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with the fighter's guild at their beck and call.",
+    "races": ""
+  },
+  { "ideal": "Anything is possible with a little muscle.", "races": "" },
+  {
+    "ideal": "Anything is possible with a keen blade at the right moment.",
+    "races": ""
+  },
+  { "ideal": "Anything is possible with faith.", "races": "" },
+  { "ideal": "Anything is possible with hope.", "races": "" },
+  { "ideal": "Anything is possible with courage.", "races": "" },
+  { "ideal": "Anything is possible with overwhelming strength.", "races": "" },
+  { "ideal": "Anything is possible with academic knowledge.", "races": "" },
+  { "ideal": "Anything is possible with fate on their side.", "races": "" },
+  { "ideal": "Anything is possible with luck on their side.", "races": "" },
+  { "ideal": "Anything is possible with the gods on their side.", "races": "" },
+  {
+    "ideal": "Anything is possible with the devil on their side.",
+    "races": ""
+  },
+  {
+    "ideal": "Anything is possible with the sea breeze in your hair.",
+    "races": ""
+  },
+  { "ideal": "The only constant in this world is chaos.", "races": "" },
+  { "ideal": "The only constant in this world is the law.", "races": "" },
+  { "ideal": "The only constant in this world is death.", "races": "" },
+  { "ideal": "The only constant in this world is taxes.", "races": "" },
+  { "ideal": "The only constant in this world is suffering.", "races": "" },
+  { "ideal": "The only constant in this world is the gods.", "races": "" },
+  { "ideal": "The only constant in this world is magic.", "races": "" },
+  {
+    "ideal": "The only constant in this world is the goodwill of others.",
+    "races": ""
+  },
+  {
+    "ideal": "The only constant in this world is dropping toast butter-side down.",
+    "races": ""
+  },
+  { "ideal": "All that matters is community growth.", "races": "" },
+  { "ideal": "All that matters is personal growth.", "races": "" },
+  {
+    "ideal": "All that matters is opening a successful buisness.",
+    "races": ""
+  },
+  { "ideal": "All that matters is supporting their loved ones.", "races": "" },
+  { "ideal": "All that matters is defeating a menacing monster.", "races": "" },
+  { "ideal": "All that matters is a successful harvest.", "races": "" },
+  { "ideal": "All that matters is a crowded tavern.", "races": "" },
+  { "ideal": "All that matters is a song in their heart.", "races": "" },
+  {
+    "ideal": "All that matters is going home at the end of the day.",
+    "races": ""
+  },
+  { "ideal": "All that matters is their children in their arms.", "races": "" },
+  {
+    "ideal": "All that matters is a stout shield in their hands.",
+    "races": ""
+  },
+  {
+    "ideal": "All that matters is protecting their lords from harm.",
+    "races": ""
+  },
+  {
+    "ideal": "All that matters is protecting the lands from invaders.",
+    "races": ""
+  },
+  {
+    "ideal": "All that matters is discovering forgotten civilizations.",
+    "races": ""
+  },
+  { "ideal": "All that matters is discovering lost recipes.", "races": "" },
+  { "ideal": "All that matters is finding their missing keys.", "races": "" },
+  { "ideal": "All that matters is their pets.", "races": "" },
+  { "ideal": "They seek the answer to everything.", "races": "" },
+  {
+    "ideal": "They seek the answer to why the gods allow bad things to happen to good people.",
+    "races": ""
+  },
+  {
+    "ideal": "They seek the answer to protect others from mystical harm.",
+    "races": ""
+  },
+  { "ideal": "They seek the answer to placing curses on rivals.", "races": "" },
+  { "ideal": "They seek the answer to unseating the gods.", "races": "" },
+  { "ideal": "They hold total respect for authority.", "races": "" },
+  { "ideal": "They hold total respect for past traditions.", "races": "" },
+  { "ideal": "They hold total respect for their elders.", "races": "" },
+  { "ideal": "They hold total respect for arcane practices.", "races": "" },
+  { "ideal": "They hold total respect for the law.", "races": "" },
+  { "ideal": "They hold total respect for royalty.", "races": "" },
+  { "ideal": "They hold total respect for their community.", "races": "" },
+  { "ideal": "They hold total respect for untamed nature.", "races": "" },
+  { "ideal": "They hold total respect for the sea.", "races": "" },
+  { "ideal": "They hold total respect for their guild.", "races": "" },
+  { "ideal": "They hold total respect for their family.", "races": "" },
+  { "ideal": "They hold total respect for a rival nation.", "races": "" },
+  { "ideal": "They hold total respect for the dead.", "races": "" },
+  { "ideal": "They hold total respect for punctuality.", "races": "" }
+]
